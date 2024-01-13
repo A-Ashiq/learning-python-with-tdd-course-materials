@@ -1,3 +1,6 @@
+import pytest
+
+
 class TestTuples:
     def test_assign_item(self):
         """
@@ -9,7 +12,8 @@ class TestTuples:
         items = "a", "b", "c"
 
         # When / Then
-        items[3] = "d"
+        with pytest.raises(TypeError):
+            items[3] = "d"
 
     def test_raise_error_when_item_is_assigned_after_instantiation(self):
         """
