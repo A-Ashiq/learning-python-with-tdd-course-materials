@@ -1,6 +1,3 @@
-import pytest
-
-
 class TestTuples:
     def test_assign_item(self):
         """
