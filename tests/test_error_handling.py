@@ -17,3 +17,19 @@ class TestErrorHandling:
 
         # Then
         assert value == "N/A"
+
+    def test_zero_division_error_returns_fallback_value(self):
+        """
+        Given 2 integers where the denominator is 0
+        When `divide_numbers()` is called
+        Then the expected fallback value is be returned
+        """
+        # Given
+        x = 1
+        y = 0
+
+        # When
+        value = divide_numbers(x=x, y=y)
+
+        # Then
+        assert value == "N/A"
