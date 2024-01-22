@@ -72,3 +72,16 @@ class TestErrorHandling:
 
         # Then
         assert returned_item == "Invalid"
+
+    def test_custom_exception_is_raised(self):
+        """
+        Given an unsupported dog breed
+        When `get_food_type_for_breed()` is called
+        Then a `FoodNotAvailableForBreedError` is raised
+        """
+        # Given
+        unsupported_dog_breed = "Poodle"
+
+        # When / Then
+        with pytest.raises(FoodNotAvailableForBreedError):
+            get_food_type_for_breed(breed=unsupported_dog_breed)

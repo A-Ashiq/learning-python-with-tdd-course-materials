@@ -12,3 +12,12 @@ def get_item_from_dict(items: dict, key: str) -> str:
         return "N/A"
     except TypeError:
         return "Invalid"
+
+
+class FoodNotAvailableForBreedError(Exception):
+    ...
+
+
+def get_food_type_for_breed(breed: str) -> str:
+    if breed == "Poodle":
+        raise FoodNotAvailableForBreedError
