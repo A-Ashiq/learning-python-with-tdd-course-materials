@@ -16,17 +16,51 @@ class TestCircle:
         # Then
         assert pi == math.pi
 
-    def test_diameter_as_instance_attribute(self):
+    def test_radius_as_instance_attribute(self):
         """
         Given the `Circle` class
-        When the `diameter` attribute is accessed
+        When the `radius` attribute is accessed
         Then the correct value is returned
         """
         # Given
-        diameter = 2.5
+        radius = 2.5
 
         # When
-        circle = Circle(diameter=diameter)
+        circle = Circle(radius=radius)
 
         # Then
-        assert circle.diameter == diameter
+        assert circle.radius == radius
+    
+    def test_circumference_as_property(self):
+        """
+        Given a radius of 2.5
+        When the `circumference` property is accessed
+            from an instance of a `Circle`
+        Then the correct value of 15.71 is returned
+        """
+        # Given
+        radius = 2.5
+        
+        # When
+        circle = Circle(radius=radius)
+        
+        # Then
+        assert circle.circumference == 2 * math.pi * radius
+
+    def test_calculate_area_as_instance_method(self):
+        """
+        Given a radius of 2.5
+        When `calculate_area()` is called
+            from an instance of a `Circle`
+        Then the correct value of 19.63 is returned
+        """
+        # Given
+        radius = 2.5
+        circle = Circle(radius=radius)
+
+        # When
+        area = circle.calculate_area()
+
+        # Then
+        assert area == math.pi * radius ** 2
+        
