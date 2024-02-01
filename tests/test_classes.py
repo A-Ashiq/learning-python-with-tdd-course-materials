@@ -1,6 +1,6 @@
 import math
 
-from src.classes import Circle
+from src.classes import Circle, Rectangle
 
 
 class TestCircle:
@@ -30,7 +30,7 @@ class TestCircle:
 
         # Then
         assert circle.radius == radius
-    
+
     def test_circumference_as_property(self):
         """
         Given a radius of 2.5
@@ -40,10 +40,10 @@ class TestCircle:
         """
         # Given
         radius = 2.5
-        
+
         # When
         circle = Circle(radius=radius)
-        
+
         # Then
         assert circle.circumference == 2 * math.pi * radius
 
@@ -62,5 +62,45 @@ class TestCircle:
         area = circle.calculate_area()
 
         # Then
-        assert area == math.pi * radius ** 2
-        
+        assert area == math.pi * radius**2
+
+
+class TestRectangle:
+    def test_calculate_perimeter(self):
+        """
+        Given a length of 2.5 and width 1
+        When the `calculate_perimeter()` method
+            is called from the `Rectangle` class
+        Then the correct value is returned
+        """
+        # Given
+        length = 2.5
+        width = 1.0
+
+        # When
+        perimeter: float = Rectangle.calculate_perimeter(
+            length=length,
+            width=width,
+        )
+
+        # Then
+        assert perimeter == 2 * (length + width)
+
+    def test_create_square(self):
+        """
+        Given a length of 2.5
+        When the `create_square()` class method
+            is called from the `Rectangle` class
+        Then a `Rectangle` instance is returned
+            with equal length and widths
+        """
+        # Given
+        length = 2.5
+
+        # When
+        square = Rectangle.create_square(
+            length=length,
+        )
+
+        # Then
+        assert square.length == square.width == length

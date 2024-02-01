@@ -1,4 +1,5 @@
 import math
+from typing import Self
 
 
 class Circle:
@@ -13,3 +14,17 @@ class Circle:
     @property
     def circumference(self) -> float:
         return 2 * self.pi * self.radius
+
+
+class Rectangle:
+    def __init__(self, length: float, width: float):
+        self.length = length
+        self.width = width
+
+    @staticmethod
+    def calculate_perimeter(length: float, width: float) -> float:
+        return 2 * (length + width)
+
+    @classmethod
+    def create_square(cls, length: float) -> Self:
+        return Rectangle(length=length, width=length)
