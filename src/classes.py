@@ -28,3 +28,11 @@ class Rectangle:
     @classmethod
     def create_square(cls, length: float) -> Self:
         return Rectangle(length=length, width=length)
+
+    def calculate_area(self) -> float:
+        return self.length * self.width
+
+
+class Square(Rectangle):
+    def __init__(self, length: float):
+        super().__init__(length=length, width=length)

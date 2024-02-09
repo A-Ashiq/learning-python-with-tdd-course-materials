@@ -1,6 +1,6 @@
 import math
 
-from src.classes import Circle, Rectangle
+from src.classes import Circle, Rectangle, Square
 
 
 class TestCircle:
@@ -104,3 +104,22 @@ class TestRectangle:
 
         # Then
         assert square.length == square.width == length
+
+
+class TestSquare:
+    def test_calculate_area(self):
+        """
+        Given a length of 2.5
+        When the `calculate_area()` method
+            is called from the `Square` class
+        Then the correct value is returned
+        """
+        # Given
+        length = 2.5
+        square = Square(length=length)
+
+        # When
+        area: float = square.calculate_area()
+
+        # Then
+        assert area == length * length
