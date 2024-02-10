@@ -36,3 +36,21 @@ class Rectangle:
 class Square(Rectangle):
     def __init__(self, length: float):
         super().__init__(length=length, width=length)
+
+
+class Employee:
+    def __init__(self, name: str):
+        self.name = name
+
+    @property
+    def salary(self) -> int:
+        return 34_963
+
+
+class Volunteer(Employee):
+    def __init__(self, name: str):
+        super().__init__(name=name)
+
+    @property
+    def salary(self):
+        return 0

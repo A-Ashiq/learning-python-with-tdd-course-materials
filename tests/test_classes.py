@@ -1,6 +1,6 @@
 import math
 
-from src.classes import Circle, Rectangle, Square
+from src.classes import Circle, Rectangle, Square, Employee, Volunteer
 
 
 class TestCircle:
@@ -123,3 +123,41 @@ class TestSquare:
 
         # Then
         assert area == length * length
+
+
+class TestEmployee:
+    def test_salary(self):
+        """
+        Given a name
+        When the `salary` property method is called
+            from an instance of the `Employee` class
+        Then 34,963 is returned
+        """
+        # Given
+        name = "Joe Bloggs"
+        employee = Employee(name=name)
+
+        # When
+        salary: int = employee.salary
+
+        # Then
+        assert salary == 34_963
+
+
+class TestVolunteer:
+    def test_salary(self):
+        """
+        Given a name
+        When the `salary` property method is called
+            from an instance of the `Volunteer` class
+        Then 0 is returned
+        """
+        # Given
+        name = "Joe Bloggs"
+        volunteer = Volunteer(name=name)
+
+        # When
+        salary: int = volunteer.salary
+
+        # Then
+        assert salary == 0
