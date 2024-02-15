@@ -3,7 +3,7 @@ from unittest import mock
 from src.mocking import User, notify_user
 
 
-class TestMocking:
+class TestNotifyUser:
     @mock.patch(target="src.mocking.send_email")
     def test_send_email_is_called_with_correct_arg(
         self, spy_send_email: mock.MagicMock
