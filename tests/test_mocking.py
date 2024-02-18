@@ -1,6 +1,6 @@
 from unittest import mock
 
-from src.mocking import User, notify_user
+from src.mocking import User, notify_user, some_func
 
 
 class TestNotifyUser:
@@ -23,3 +23,19 @@ class TestNotifyUser:
 
         # Then
         spy_send_email.assert_called_once_with(email_address=email_address)
+
+
+class TestSomeFunc:
+    @mock.patch(target="src.mocking.do_something_first")
+    @mock.patch(target="src.mocking.do_something_following")
+    @mock.patch(target="src.mocking.do_something_next")
+    @mock.patch(target="src.mocking.do_something_last")
+    def test_code_smell_patch_stack(
+        self,
+        mocked_do_something_first: mock.MagicMock,
+        mocked_do_something_following: mock.MagicMock,
+        mocked_do_something_next: mock.MagicMock,
+        mocked_do_something_last: mock.MagicMock,
+    ):
+
+        some_func()
