@@ -1,6 +1,6 @@
 from unittest import mock
 
-from src.mocking import User, notify_user, some_func
+from src.mocking import User, notify_user, some_func, some_func_revised
 
 
 class TestNotifyUser:
@@ -39,3 +39,15 @@ class TestSomeFunc:
     ):
 
         some_func()
+
+
+class TestSomeFuncRevised:
+    @mock.patch(target="src.mocking.do_first_steps")
+    @mock.patch(target="src.mocking.do_last_steps")
+    def test_code_smell_patch_stack(
+        self,
+        mocked_do_first_steps: mock.MagicMock,
+        mocked_do_last_steps: mock.MagicMock,
+    ):
+
+        some_func_revised()

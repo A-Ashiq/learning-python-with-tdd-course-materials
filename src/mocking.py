@@ -38,3 +38,19 @@ def some_func() -> None:
     do_something_next()
     do_something_last()
     # Do other stuff
+
+
+def do_first_steps():
+    do_something_first()
+    do_something_following()
+
+
+def do_last_steps():
+    do_something_next()
+    do_something_last()
+
+
+def some_func_revised() -> None:
+    do_first_steps()
+    do_last_steps()
+    # Do other stuff
