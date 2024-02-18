@@ -19,8 +19,10 @@ def send_email(email_address: str) -> None:
 def do_something_first() -> None:
     ...
 
+
 def do_something_following() -> None:
     ...
+
 
 def do_something_next() -> None:
     ...
