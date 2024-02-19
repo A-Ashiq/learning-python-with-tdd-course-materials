@@ -34,23 +34,17 @@ def do_something_last() -> None:
 
 def some_func() -> None:
     do_something_first()
-    do_something_following()
     do_something_next()
     do_something_last()
     # Do other stuff
 
 
-def do_first_steps():
-    do_something_first()
-    do_something_following()
-
-
-def do_last_steps():
+def do_stuff():
+    do_something_next()
     do_something_next()
     do_something_last()
 
 
 def some_func_revised() -> None:
-    do_first_steps()
-    do_last_steps()
+    do_stuff()
     # Do other stuff
