@@ -20,7 +20,7 @@ class TestUserInterface:
         user_id = 123
         user = User(user_id=user_id)
         fake_user_repository = FakeUserRepository(users=[user])
-        user_interface = UserInterface(respository=fake_user_repository)
+        user_interface = UserInterface(repository=fake_user_repository)
 
         # When
         retrieved_user: User = user_interface.get_user(user_id=user_id)

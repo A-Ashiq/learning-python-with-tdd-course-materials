@@ -14,8 +14,8 @@ class UserRepository:
 
 
 class UserInterface:
-    def __init__(self, respository: UserRepository):
-        self.repository = respository
+    def __init__(self, repository: UserRepository):
+        self.repository = repository
 
     def get_user(self, user_id: int) -> User:
         user = self.repository.get_user(user_id=user_id)
