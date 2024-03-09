@@ -25,3 +25,20 @@ class TestIteration:
 
         # When / Then
         print_all_items(items=items)
+
+    def test_loops_over_generator(self):
+        """
+        Given a generator of strings
+        When `print_all_items()` is called
+        Then each item is printed
+        """
+        # Given
+        def iterator_of_items():
+            yield "red"
+            yield "blue"
+            yield "green"
+
+        items = iterator_of_items()
+
+        # When / Then
+        print_all_items(items=items)
