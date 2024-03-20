@@ -17,7 +17,7 @@ def run_with_multiple_processes(func: Callable, number_of_processes: int) -> Non
 
 def cpu_bound_operation(index: int) -> None:
     print(f"Starting CPU bound operation for process number {index}")
-    number: int = randrange(10_000_000, 100_000_000)
+    number = 10_000_000
     count(number=number)
     print(f"Finished CPU bound operation for process number {index}")
 
